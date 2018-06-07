@@ -1,0 +1,50 @@
+{
+  "name": "socket-server",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "set NODE_ENV=development&& nodemon --exec babel-node -- ./src/bin/www",
+    "build": "babel src -d dist --source-maps inline --copy-files",
+    "serve": "set NODE_ENV=production&& node ./dist/bin/www",
+    "test": "mocha --require test/setup.js --compilers js:babel-core/register test/integration/*.js test/models/*.js --recursive",
+    "lint": "eslint",
+    "lint-all": "eslint index.js test/*",
+    "start-test": "babel-node ./src/services/exe_class"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-react": "^7.7.0",
+    "mocha": "^5.1.1",
+    "mockgoose": "^7.3.5",
+    "supertest": "^3.0.0"
+  },
+  "dependencies": {
+    "babel-register": "^6.26.0",
+    "bcrypt-nodejs": "^0.0.3",
+    "body-parser": "~1.18.2",
+    "compression": "^1.7.2",
+    "cookie-parser": "~1.4.3",
+    "cors": "^2.8.4",
+    "debug": "~2.6.9",
+    "express": "~4.15.5",
+    "helmet": "^3.12.0",
+    "jade": "~1.11.0",
+    "jsonwebtoken": "^8.2.1",
+    "method-override": "^2.3.10",
+    "mongoose": "^5.0.17",
+    "morgan": "^1.9.0",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "serve-favicon": "~2.4.5",
+    "socket.io": "^2.1.0"
+  }
+}
